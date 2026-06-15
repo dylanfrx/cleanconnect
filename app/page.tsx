@@ -1,126 +1,139 @@
 import Link from "next/link";
 
 export default function Home() {
-  const categories = [
-    "🏡 Airbnb",
-    "🛋️ Canapés",
-    "🪟 Vitres",
-    "🏢 Bureaux",
-    "🏗️ Chantier",
-    "🧹 Domicile",
-  ];
-
-  const entreprises = [
-    {
-      nom: "Nettoyage Catalan",
-      note: "4.9",
-      ville: "Le Barcarès",
-      prix: "À partir de 35€",
-      badge: "Entreprise vérifiée",
-    },
-    {
-      nom: "Propre & Net 66",
-      note: "4.8",
-      ville: "Saint-Cyprien",
-      prix: "À partir de 40€",
-      badge: "Entreprise vérifiée",
-    },
-    {
-      nom: "Clean Home Services",
-      note: "4.7",
-      ville: "Canet-en-Roussillon",
-      prix: "À partir de 38€",
-      badge: "Entreprise vérifiée",
-    },
-  ];
-
   return (
     <main className="min-h-screen bg-[#F8F6F2] pb-24">
       <div className="max-w-md mx-auto p-6">
 
-        <p className="text-[#B8945B] font-medium">
-          Bonjour Dylan 👋
-        </p>
+        {/* Logo */}
+        <div className="flex flex-col items-center mt-8">
+          <img
+            src="/images/logo-cleanconnect.png"
+            alt="CleanConnect"
+            className="w-44 h-auto"
+          />
+        </div>
 
-        <h1 className="mt-4 text-4xl font-bold leading-tight text-gray-900">
-          Trouvez le professionnel
-          <br />
-          du <span className="text-[#B8945B]">nettoyage</span>
-          qu'il vous faut
-        </h1>
 
-        <input
-          type="text"
-          placeholder="Que recherchez-vous ?"
-          className="mt-8 w-full rounded-3xl bg-white p-5 shadow-md outline-none"
-        />
+        {/* Titre */}
+        <div className="mt-6 text-center">
+          <h1 className="text-4xl font-bold text-gray-900">
+            Le nettoyage
+            <br />
+            nouvelle génération
+          </h1>
 
+          <p className="mt-4 text-gray-500">
+            Trouvez un professionnel de confiance en quelques clics.
+          </p>
+        </div>
+
+
+        {/* Recherche */}
+        <div className="mt-8">
+          <input
+            type="text"
+            placeholder="🔍 Rechercher un service"
+            className="w-full bg-white rounded-3xl p-5 shadow-sm outline-none"
+          />
+        </div>
+
+
+        {/* Confiance */}
+        <div className="mt-6 bg-white rounded-3xl p-5 shadow-sm">
+
+          <div className="flex items-center gap-3">
+            <span>✓</span>
+            <p>Entreprises vérifiées par CleanConnect</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-3">
+            <span>🔒</span>
+            <p>Paiement sécurisé jusqu'à validation</p>
+          </div>
+
+          <div className="flex items-center gap-3 mt-3">
+            <span>⭐</span>
+            <p>Avis clients authentifiés</p>
+          </div>
+
+        </div>
+
+
+        {/* Services */}
         <div className="mt-10">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Catégories populaires
+
+          <h2 className="text-xl font-bold">
+            Services populaires
           </h2>
 
-          <div className="grid grid-cols-2 gap-4">
-            {categories.map((categorie) => (
-              <div
-                key={categorie}
-                className="bg-white rounded-3xl p-5 shadow-sm text-center font-medium"
-              >
-                {categorie}
-              </div>
-            ))}
+          <div className="grid grid-cols-2 gap-4 mt-4">
+
+            <div className="bg-white rounded-3xl p-5 text-center">
+              🏡 Airbnb
+            </div>
+
+            <div className="bg-white rounded-3xl p-5 text-center">
+              🛋️ Canapés
+            </div>
+
+            <div className="bg-white rounded-3xl p-5 text-center">
+              🪟 Vitres
+            </div>
+
+            <div className="bg-white rounded-3xl p-5 text-center">
+              🏢 Bureaux
+            </div>
+
           </div>
+
         </div>
 
-        <div className="mt-12">
-          <h2 className="text-xl font-semibold text-gray-900 mb-4">
-            Entreprises recommandées
+
+        {/* Entreprise mise en avant */}
+        <div className="mt-10">
+
+          <h2 className="text-xl font-bold mb-4">
+            Professionnel recommandé
           </h2>
 
-          <div className="space-y-5">
-            {entreprises.map((entreprise) => (
-              <div
-                key={entreprise.nom}
-                className="bg-white rounded-3xl p-4 shadow-sm"
-              >
-                <div className="h-48 rounded-2xl bg-stone-200 mb-4"></div>
 
-                <h3 className="font-bold text-xl text-gray-900">
-                  {entreprise.nom}
-                </h3>
+          <div className="bg-white rounded-3xl p-5 shadow-sm">
 
-                <p className="text-gray-500 mt-1">
-                  📍 {entreprise.ville}
-                </p>
+            <div className="h-40 rounded-2xl bg-stone-200"></div>
 
-                <p className="text-[#B8945B] mt-2">
-                  ⭐ {entreprise.note}
-                </p>
 
-                <span className="inline-block mt-2 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
-                  ✓ {entreprise.badge}
-                </span>
+            <h3 className="mt-4 text-2xl font-bold">
+              Nettoyage Catalan
+            </h3>
 
-                <p className="font-semibold mt-3">
-                  {entreprise.prix}
-                </p>
 
-                {entreprise.nom === "Nettoyage Catalan" ? (
-                  <Link
-                    href="/entreprise/nettoyage-catalan"
-                    className="block text-center mt-4 w-full bg-[#B8945B] text-white py-3 rounded-2xl font-medium hover:opacity-90 transition"
-                  >
-                    Voir le profil
-                  </Link>
-                ) : (
-                  <button className="mt-4 w-full bg-gray-200 text-gray-600 py-3 rounded-2xl font-medium">
-                    Bientôt disponible
-                  </button>
-                )}
-              </div>
-            ))}
+            <p className="mt-2 text-[#B8945B]">
+              ⭐ 4.9 • 127 avis
+            </p>
+
+
+            <p className="mt-2 text-gray-500">
+              📍 Le Barcarès
+            </p>
+
+
+            <span className="inline-block mt-3 bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+              ✓ Entreprise vérifiée
+            </span>
+
+
+            <Link
+              href="/entreprise/nettoyage-catalan"
+              className="block text-center mt-6 w-full bg-[#B8945B] text-white py-4 rounded-2xl font-medium"
+            >
+              Voir le profil
+            </Link>
+
           </div>
+
         </div>
+
 
       </div>
     </main>
