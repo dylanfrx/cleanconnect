@@ -1,202 +1,249 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-b from-[#FCFAF6] to-[#F3E8D6] pb-28 overflow-hidden">
+    <main className="min-h-screen bg-[#F8F6F2] pb-32">
 
-      {/* Effets de lumière dorée */}
-      <div className="absolute -top-20 -right-20 w-72 h-72 bg-[#B8945B]/20 rounded-full blur-3xl"></div>
-      <div className="absolute top-96 -left-20 w-60 h-60 bg-[#B8945B]/10 rounded-full blur-3xl"></div>
-
-      <div className="relative max-w-md mx-auto p-6">
+      <div className="max-w-md mx-auto px-6">
 
         {/* Logo */}
-        <div className="flex justify-center mt-6">
-          <img
+        <div className="flex justify-center pt-10">
+          <Image
             src="/images/logo-cleanconnect.png"
             alt="CleanConnect"
-            className="w-36 h-auto"
+            width={110}
+            height={110}
+            className="object-contain"
           />
         </div>
 
+
         {/* Titre */}
-        <div className="text-center mt-6">
-          <h1 className="text-4xl font-bold text-gray-900">
+        <div className="text-center mt-4">
+
+          <h1 className="text-5xl font-bold text-[#0F172A] leading-tight">
             Le nettoyage
             <br />
             nouvelle génération
           </h1>
 
-          <p className="mt-3 text-gray-600 text-lg">
-            Réservez un professionnel de confiance
-            en quelques clics.
+          <p className="mt-4 text-xl text-gray-500">
+            Réservez un professionnel de confiance en quelques clics.
           </p>
+
         </div>
 
+
         {/* Recherche */}
-        <div className="mt-8">
-          <input
-            type="text"
-            placeholder="Rechercher un service..."
-            className="
-              w-full 
-              p-5 
-              rounded-3xl 
-              bg-white 
-              text-gray-800
-              placeholder:text-gray-400
-              shadow-lg
-              outline-none
-            "
-          />
-        </div>
+        <input
+          type="text"
+          placeholder="Rechercher un service..."
+          className="
+            mt-8
+            w-full
+            bg-white
+            rounded-3xl
+            p-5
+            text-gray-700
+            placeholder:text-gray-400
+            shadow-lg
+            outline-none
+          "
+        />
 
 
         {/* Bloc confiance */}
-        <div className="mt-6 bg-white/80 backdrop-blur-sm rounded-3xl p-5 shadow-lg">
+        <div className="
+          mt-6
+          bg-white
+          rounded-3xl
+          p-6
+          shadow-lg
+        ">
 
-          <div className="flex gap-3">
-            <span className="text-[#B8945B] text-xl">✓</span>
-            <p className="text-gray-800">
-              Entreprises vérifiées par CleanConnect
-            </p>
-          </div>
+          <div className="space-y-4">
 
-          <div className="flex gap-3 mt-4">
-            <span className="text-[#B8945B] text-xl">🔒</span>
-            <p className="text-gray-800">
-              Paiement sécurisé jusqu'à validation
+            <p className="text-[#0F172A]">
+              ✔ Entreprises vérifiées par CleanConnect
             </p>
-          </div>
 
-          <div className="flex gap-3 mt-4">
-            <span className="text-[#B8945B] text-xl">⭐</span>
-            <p className="text-gray-800">
-              Avis clients authentifiés
+            <p className="text-[#0F172A]">
+              🔒 Paiement sécurisé jusqu'à validation
             </p>
+
+            <p className="text-[#0F172A]">
+              ⭐ Avis clients authentifiés
+            </p>
+
           </div>
 
         </div>
 
 
-        {/* Services */}
-        <div className="mt-10">
+        {/* Services populaires */}
+        <div className="mt-12">
 
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-[#0F172A] mb-5">
             Services populaires
           </h2>
 
-          <div className="grid grid-cols-2 gap-4 mt-4">
+          <div className="grid grid-cols-2 gap-4">
 
-            {[
-              "🏡 Airbnb",
-              "🛋️ Canapés",
-              "🪟 Vitres",
-              "🏢 Bureaux",
-              "🏠 Maison",
-              "🏗️ Chantier",
-            ].map((service) => (
-              <div
-                key={service}
-                className="
-                  bg-white/80 
-                  backdrop-blur-sm
-                  rounded-2xl 
-                  p-5 
-                  text-center 
-                  font-medium
-                  text-gray-800
-                  shadow-md
-                "
-              >
-                {service}
-              </div>
-            ))}
+            <div className="bg-white rounded-3xl p-5 shadow-lg text-center">
+              🏡 Airbnb
+            </div>
+
+            <div className="bg-white rounded-3xl p-5 shadow-lg text-center">
+              🛋️ Canapés
+            </div>            <div className="bg-white rounded-3xl p-5 shadow-lg text-center">
+              🪟 Vitres
+            </div>
+
+            <div className="bg-white rounded-3xl p-5 shadow-lg text-center">
+              🧹 Domicile
+            </div>
 
           </div>
 
         </div>
 
 
-        {/* Entreprise */}
-        <div className="mt-10">
+        {/* Entreprise recommandée */}
+        <div className="mt-12">
 
-          <h2 className="text-xl font-bold text-gray-900 mb-4">
-            Professionnel recommandé
+          <h2 className="text-2xl font-bold text-[#0F172A] mb-5">
+            Entreprise recommandée
           </h2>
 
 
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-5 shadow-xl">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-xl">
 
-            <div className="
-              h-44 
-              rounded-2xl 
-              bg-gradient-to-r 
-              from-[#D8C5A1] 
-              to-[#B8945B]
-              flex 
-              items-center 
-              justify-center
-              text-white
-              text-lg
-              font-semibold
-            ">
-              Nettoyage Catalan
+
+            {/* Photo entreprise */}
+            <div className="relative h-56 w-full">
+
+              <Image
+                src="/images/nettoyage-catalan.jpg"
+                alt="Nettoyage Catalan"
+                fill
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-black/25"></div>
+
+
+              <div className="absolute bottom-5 left-5">
+
+                <p className="text-white text-2xl font-bold">
+                  Nettoyage Catalan
+                </p>
+
+                <p className="text-white text-sm">
+                  Le Barcarès • Service Premium
+                </p>
+
+              </div>
+
             </div>
 
 
-            <h3 className="mt-5 text-2xl font-bold text-gray-900">
-              Nettoyage Catalan
-            </h3>
+            {/* Informations */}
+            <div className="p-5">
+
+              <div className="flex items-center justify-between">
+
+                <h3 className="text-xl font-bold text-[#0F172A]">
+                  Nettoyage Catalan
+                </h3>
 
 
-            <p className="mt-2 text-[#B8945B] font-medium">
-              ⭐ 4.9 • 127 avis
-            </p>
+                <span className="
+                  bg-green-100
+                  text-green-700
+                  px-3
+                  py-1
+                  rounded-full
+                  text-xs
+                  font-medium
+                ">
+                  ✓ Vérifié
+                </span>
+
+              </div>
 
 
-            <p className="mt-2 text-gray-600">
-              📍 Le Barcarès
-            </p>
+              <div className="mt-3 flex items-center gap-2">
+
+                <span className="text-[#B8945B] font-semibold">
+                  ⭐ 4.9
+                </span>
+
+                <span className="text-gray-300">
+                  •
+                </span>
+
+                <span className="text-gray-500">
+                  127 avis clients
+                </span>
+
+              </div>
 
 
-            <span className="
-              inline-block 
-              mt-3 
-              bg-green-100 
-              text-green-700 
-              px-4 
-              py-2 
-              rounded-full 
-              text-sm
-            ">
-              ✓ Entreprise vérifiée
-            </span>
+              <p className="mt-3 text-gray-500">
+                📍 Le Barcarès
+              </p>
 
 
-            <Link
-              href="/entreprise/nettoyage-catalan"
-              className="
-                block
-                text-center
-                mt-6
-                w-full
-                bg-[#B8945B]
-                text-white
-                py-4
-                rounded-2xl
-                font-semibold
-                shadow-lg
-                hover:opacity-90
-                transition
-              "
-            >
-              Voir le profil
-            </Link>
+              <p className="mt-4 text-gray-600 leading-relaxed">
+                Spécialiste du nettoyage Airbnb,
+                maisons, appartements,
+                bureaux et canapés.
+              </p>
+
+
+              <div className="mt-5 flex flex-wrap gap-2">
+
+                <span className="bg-[#F8F4EB] text-[#B8945B] px-3 py-2 rounded-full text-sm">
+                  Airbnb
+                </span>
+
+                <span className="bg-[#F8F4EB] text-[#B8945B] px-3 py-2 rounded-full text-sm">
+                  Canapés
+                </span>
+
+                <span className="bg-[#F8F4EB] text-[#B8945B] px-3 py-2 rounded-full text-sm">
+                  Vitres
+                </span>
+
+              </div>
+
+
+              <Link
+                href="/entreprise/nettoyage-catalan"
+                className="
+                  block
+                  mt-6
+                  bg-[#B8945B]
+                  text-white
+                  text-center
+                  py-4
+                  rounded-2xl
+                  font-semibold
+                  shadow-lg
+                  hover:opacity-90
+                  transition
+                "
+              >
+                Réserver une prestation
+              </Link>
+
+            </div>
 
           </div>
 
         </div>
+
 
       </div>
 
